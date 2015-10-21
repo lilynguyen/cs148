@@ -19,7 +19,7 @@ require_once('lib/custom-functions.php');
         <link rel="stylesheet" href="css/base.css" type="text/css" media="screen">
 
         <?php
-        $debug = false;
+        $debug = true;
 
         // %^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
         //
