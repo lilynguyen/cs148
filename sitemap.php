@@ -36,7 +36,7 @@
               <li><a href="assignment2.0/q11.php">q11</a></li>
               <li><a href="assignment2.0/q12.php">q12</a></li>
             </ul>
-            <li>Assignment 3.0: <a href="assignment3.0/join.php">Joins</a> - <a href="assignment3.0/css/base.css">Style Sheet</a></li>
+          <li>Assignment 3.0: <a href="assignment3.0/join.php">Joins</a> - <a href="assignment3.0/css/base.css">Style Sheet</a></li>
             <ul>
               <li><a href="assignment3.0/q01.php">q01</a></li>
               <li><a href="assignment3.0/q02.php">q02</a></li>
@@ -47,6 +47,7 @@
               <li><a href="assignment3.0/q07.php">q07</a></li>
               <li><a href="assignment3.0/q08.php">q08</a></li>
             </ul>
+          <li>Advising: <a href="advising/index.php">Index</a> - <a href="advising/css/base.css">Style Sheet</a></li>
           <li>Try Me: <a href="tryme.php">CLICKY</a></li> 
       </ul>
     </nav>
