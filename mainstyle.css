@@ -1,0 +1,92 @@
+/* CSS designed by Robert M. Erickson */
+
+/* ===================  General Section  ==================================== */
+
+* {
+	font-size: 12pt;  
+    color: #ffffff;
+    font-family: "arial";
+}
+
+body {
+	background-color: #ffffff;
+	background-image: url(me.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	margin-left: 6em;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 1.25em;
+}
+
+ol ol ol li {
+    list-style: none
+}
+
+ol ol li {
+    font-weight: normal;
+    list-style: decimal;
+    padding-top: 0em
+}
+
+ol li {
+    font-weight: bold;
+    list-style: none;
+    padding-top: 1em
+}
+
+ul ul ul li { 
+	list-style: circle;
+}
+
+ul ul li { 
+	list-style: square;
+}
+
+ul li { 
+	list-style: disc;
+}
+/* ===================  Header Section  ==================================== */
+/* now i would have a section that corresponds to my html sections.          */
+header {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+header h1{
+    padding-top: .5em;
+}
+
+/* ===================  Navigation Section  ================================ */
+nav ul li {
+    list-style-type: none;
+}
+
+nav {
+    font-family: "arial";
+    
+    
+}
+/* -------------------------------------------------------------------------- */
+/* in my html code my body tag on the main page would have an id="main" so    */
+/* i would be able to create rules for just the main page.                    */
+
+#mainindex {  
+	background-color: #000000;
+        
+}
+
+#mainindex p{
+	float: left;
+        padding-right: .4em;
+
+}
+
+
