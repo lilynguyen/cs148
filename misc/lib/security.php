@@ -18,28 +18,14 @@ function securityCheck($path_parts, $yourURL, $form = false) {
     
     // add all your page names to this array
     $whiteListPages = array();
-    $whiteListPages[] = "tables.php";
-    $whiteListPages[] = "index.php";
-    $whiteListPages[] = "populate-table.php";
-    $whiteListPages[] = "populate-enrolled.php";
-    $whiteListPages[] = "select.php";
     $whiteListPages[] = "friday.php";
-    $whiteListPages[] = "q02.php";
-    $whiteListPages[] = "q03.php";
-    $whiteListPages[] = "q04.php";
-    $whiteListPages[] = "q05.php";
-    $whiteListPages[] = "q06.php";
-    $whiteListPages[] = "q07.php";
-    $whiteListPages[] = "q08.php";
-    $whiteListPages[] = "q09.php";
-    $whiteListPages[] = "q10.php";
-    $whiteListPages[] = "q11.php";
-    $whiteListPages[] = "q12.php";
 
     //add all the folders to this array
     $whiteListFolders = array();
     $whiteListFolders[] = "/cs148";
     $whiteListFolders[] = "/cs148/misc";
+    $whiteListFolders[] = "/cs148develop";
+    $whiteListFolders[] = "/cs148develop/misc";
 
     
     //$whiteListFolders[] = "/cs148/assignment1.0";
