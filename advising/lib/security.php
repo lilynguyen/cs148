@@ -26,6 +26,7 @@ function securityCheck($path_parts, $yourURL, $form = false) {
     //add all the folders to this array
     $whiteListFolders = array();
     $whiteListFolders[] = "/cs148";
+    $whiteListFolders[] = "/cs148/advising";
     $whiteListFolders[] = "/cs148develop";
     $whiteListFolders[] = "/cs148develop/advising";
 
