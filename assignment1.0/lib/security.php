@@ -23,10 +23,10 @@ function securityCheck($path_parts, $yourURL, $form = false) {
     $whiteListPages[] = "populate-table.php";
     $whiteListPages[] = "populate-enrolled.php";
 
-    $whiteListPages[] = "cs148develop/assignment1.0/tables.php";
-    $whiteListPages[] = "cs148develop/assignment1.0/index.php";
-    $whiteListPages[] = "cs148develop/assignment1.0/populate-table.php";
-    $whiteListPages[] = "cs148develop/assignment1.0/populate-enrolled.php";
+    // $whiteListPages[] = "cs148develop/assignment1.0/tables.php";
+    // $whiteListPages[] = "cs148develop/assignment1.0/index.php";
+    // $whiteListPages[] = "cs148develop/assignment1.0/populate-table.php";
+    // $whiteListPages[] = "cs148develop/assignment1.0/populate-enrolled.php";
 
     //add all the folders to this array
     $whiteListFolders = array();
