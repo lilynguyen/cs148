@@ -36,15 +36,7 @@
               <li><a href="assignment2.0/q11.php">q11</a></li>
               <li><a href="assignment2.0/q12.php">q12</a></li>
             </ul>
-<<<<<<< HEAD
-<<<<<<< HEAD
             <li>Assignment 3.0: <a href="assignment3.0/join.php">Joins</a> - <a href="assignment3.0/css/base.css">Style Sheet</a></li>
-=======
-          <li>Assignment 3.0: <a href="assignment3.0/joins.php">Joins</a> - <a href="assignment3.0/css/base.css">Style Sheet</a></li>
->>>>>>> origin/master
-=======
-          <li>Assignment 3.0: <a href="assignment3.0/joins.php">Joins</a> - <a href="assignment3.0/css/base.css">Style Sheet</a></li>
->>>>>>> origin/master
             <ul>
               <li><a href="assignment3.0/q01.php">q01</a></li>
               <li><a href="assignment3.0/q02.php">q02</a></li>
@@ -54,15 +46,7 @@
               <li><a href="assignment3.0/q06.php">q06</a></li>
               <li><a href="assignment3.0/q07.php">q07</a></li>
               <li><a href="assignment3.0/q08.php">q08</a></li>
-<<<<<<< HEAD
-<<<<<<< HEAD
             </ul>
-=======
-            </u3>
->>>>>>> origin/master
-=======
-            </u3>
->>>>>>> origin/master
           <li>Try Me: <a href="tryme.php">CLICKY</a></li> 
       </ul>
     </nav>
