@@ -1,11 +1,13 @@
 <?php
+  // in URL, ?numRecord=10&startRecord=1000
+
   include "top.php";
 
   $startRecordValue = 0;
   $numOfRecords = 0;
 
-  $startRecordValue = $_GET("startRecord"];
-  $numOfRecords = $_GET("numRecord");
+  $startRecordValue = $_GET["startRecord"];
+  $numOfRecords = $_GET["numRecord"];
 
   $query = 'SELECT * FROM tblStudents ORDER BY fldLastName, fldFirstName ASC LIMIT ' . $startRecordValue . ',' . $numOfRecords;
   #$thisDatabaseReader->testquery($query, "", 0, 0, 0, 0, false, false);
