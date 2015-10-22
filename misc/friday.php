@@ -12,7 +12,7 @@
   $query = 'SELECT * FROM tblStudents ORDER BY fldLastName, fldFirstName ASC LIMIT ' . $startRecordValue . ',' . $numOfRecords;
   #$thisDatabaseReader->testquery($query, "", 0, 0, 0, 0, false, false);
   $info2 = $thisDatabaseReader->select($query, "", 0, 1, 0, 0, false, false);
-  echo count($info2);
+  echo '<h2> Records: ' . count($info2) . '</h2>';
   print '<br>';
   echo $query;
   print '<br>';

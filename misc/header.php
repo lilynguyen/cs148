@@ -1,8 +1,7 @@
 <!-- %%%%%%%%%%%%%%%%%%%%%%     Page header   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 <header>
-    <h1>SUBMITTING QUERIES</h1>
-    <h2>Catchy tag line for submitting queries</h2>
+    <h1>In-Class Assignment</h1>
 </header>
 
 <!-- %%%%%%%%%%%%%%%%%%%%% Ends Page header   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->

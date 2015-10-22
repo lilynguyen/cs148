@@ -5,7 +5,7 @@ require_once('lib/custom-functions.php');
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>UVM Courses Tables by Lil' Nach yo yo yo</title>
+        <title>In-Class Assignment</title>
         <meta charset="utf-8">
         <meta name="author" content="Lily H. Nguyen">
         <meta name="description" content="This website is really cool yo it makes a list of courses!">

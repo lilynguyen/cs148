@@ -46,6 +46,11 @@ section{
     width: 40%;  
 }
 
+tr:hover {
+    background: #FCF;
+    border: 2px solid black;
+}
+
 /*------------------------   classes           ------------------------------ */
 
 .even{
