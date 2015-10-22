@@ -15,6 +15,8 @@
   print '<br>';
   echo $query;
   print '<br>';
+  
+  print $columnTitles
 
   $fields = array_keys($info2[0]);
   //$labels = array_filter($fields,'is_string');
