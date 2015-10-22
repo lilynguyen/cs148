@@ -1,20 +1,22 @@
 <?php
   include "top.php";
 
-  $startRecordValue = 1000;
-  $numOfRecords = 10;
+  $startRecordValue = 0;
+  $numOfRecords = 0;
 
-  $records = (int) $_GET["records"];
-  $start = (int) $_GET["start"];
+  $startRecordValue = $_GET("startRecord"];
+  $numOfRecords = $_GET("numRecord");
 
-  #$query = 'SELECT * FROM tblStudents ORDER BY fldLastName, fldFirstName ASC LIMIT 1000, ' . $start;
-  $query = 'SELECT * FROM tblStudents ORDER BY fldLastName, fldFirstName ASC LIMIT ' . $records . ',' . $start;
+  $query = 'SELECT * FROM tblStudents ORDER BY fldLastName, fldFirstName ASC LIMIT ' . $startRecordValue . ',' . $numOfRecords;
   #$thisDatabaseReader->testquery($query, "", 0, 0, 0, 0, false, false);
   $info2 = $thisDatabaseReader->select($query, "", 0, 1, 0, 0, false, false);
   echo count($info2);
   print '<br>';
   echo $query;
   print '<br>';
+
+  echo '<a href="?numRecord=' . $numOfRecords . '&startRecord=' . ($startRecordValue - 10) . '"> Prev </a>';
+  echo '<a href="?numRecord=' . $numOfRecords . '&startRecord=' . ($startRecordValue + 10) . '"> Next </a>';
 
   $labels = array_keys($info2[0]);
   $labelArray = array_filter($labels,'is_string');
@@ -30,7 +32,7 @@
           }
           print '<th>' . $message . '</th>';
       }
-      print '</tr>';
+  print '</tr>';
 
   $columns = 8;
   $highlight = 0;
