@@ -15,16 +15,23 @@
   print '<br>';
   echo $query;
   print '<br>';
-  
-  print $columnTitles
 
-  $fields = array_keys($info2[0]);
-  //$labels = array_filter($fields,'is_string');
-
-  print '<p><pre>';
-  print_r($fields);
+  $labels = array_keys($info2[0]);
+  $labelArray = array_filter($labels,'is_string');
 
   print '<table>';
+
+  print '<tr>';
+      foreach ($labelArray as $key) {
+          $camelCase = preg_split('/(?=[A-Z])/', substr($key, 3));
+          $message = "";
+          foreach ($camelCase as $one) {
+              $message .= $one . " ";
+          }
+          print '<th>' . $message . '</th>';
+      }
+      print '</tr>';
+
   $columns = 8;
   $highlight = 0;
   foreach ($info2 as $rec) {
