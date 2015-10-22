@@ -1,6 +1,5 @@
 <?php
   // in URL, ?numRecord=10&startRecord=1000
-  // Testing
 
   include "top.php";
 
