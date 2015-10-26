@@ -47,7 +47,7 @@
               <li><a href="assignment3.0/q07.php">q07</a></li>
               <li><a href="assignment3.0/q08.php">q08</a></li>
             </ul>
-          <li>Advising: <a href="advising/index.php">Index</a> - <a href="advising/css/base.css">Style Sheet</a></li>
+          <li>Advising: <a href="advising/index.php">Index</a> - <a href="advising/css/base.css">Style Sheet</a> - <a href="advising/erd.pdf">ERD</a> - <a href="advising/schema.pdf">Schema</a></li>
           <li>Friday: <a href="misc/friday.php?numRecord=10&startRecord=1000">Index</a> - <a href="misc/css/base.css">Style Sheet</a></li>
           <li>Try Me: <a href="tryme.php">CLICKY</a></li> 
       </ul>
