@@ -15,6 +15,12 @@
         } else {
             print '<li><a href="tables.php">Display Tables</a></li>';
         }
+        
+        if ($path_parts['filename'] == "q01") {
+            print '<li class="activePage">q01</li>';
+        } else {
+            print '<li><a href="q01.php">q01</a></li>';
+        }
         ?>
     </ol>
 </nav>
