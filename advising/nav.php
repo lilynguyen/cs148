@@ -21,6 +21,12 @@
         } else {
             print '<li><a href="q01.php">q01</a></li>';
         }
+        
+        if ($path_parts['filename'] == "plan") {
+            print '<li class="activePage">plan</li>';
+        } else {
+            print '<li><a href="plan.php">plan</a></li>';
+        }
         ?>
     </ol>
 </nav>
