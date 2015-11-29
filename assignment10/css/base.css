@@ -1,13 +1,15 @@
-/* 
-    Created on : Jun 10, 2015, 10:27:26 AM
-    Author     : Robert Erickson & Lily Nachos
-*/
+/* ======================================================
+    Created on : Nov 29, 2015, 05:15 PM
+    Author     : Lily H. Nguyen
+   ====================================================== */
+
 @import url('reset.css');
 
-/*------------------------   standard elements  ----------------------------- */
+/* ================== standard elements ================== */
 * {
     font-size: 11pt;
-    font-family: arial;
+    font-family: Helvetica;
+    background: #808080
 }
 
 body {
@@ -50,7 +52,7 @@ footer{
     text-align: center;
 }
 
-/*------------------------   classes           ------------------------------ */
+/* ================== classes ================== */
 
 .even{
     background-color: whitesmoke;
@@ -64,14 +66,14 @@ footer{
     width: 150px;
 }
 
-/*------------------------   nav section only  ------------------------------ */
+/* ================== nav section only ================== */
 nav ol li{
     display: inline-block;
     list-style-type: none;
     padding-right: 2em;
 }
 
-/*------------------------   table page  only  ------------------------------ */
+/* ================== table page  only ================== */
 #table aside{
     height: 600px; 
     float: left; 
@@ -97,4 +99,3 @@ nav ol li{
 #table th{
     text-align: left;
 }
-
