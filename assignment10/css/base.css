@@ -1,0 +1,100 @@
+/* 
+    Created on : Jun 10, 2015, 10:27:26 AM
+    Author     : Robert Erickson & Lily Nachos
+*/
+@import url('reset.css');
+
+/*------------------------   standard elements  ----------------------------- */
+* {
+    font-size: 11pt;
+    font-family: arial;
+}
+
+body {
+    margin: 0 5% 0 5%;
+}
+
+article {
+    padding: 2em;
+}
+
+header {
+    overflow: auto; /* forces header to fit to figure */
+    text-align: center;
+}
+
+header h1 {
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+header h2 {
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+nav {
+    text-align: center;
+}
+
+img {
+    max-width: 100%; /* image strinks to fit containtor but does not stretch */
+}
+
+section {
+    padding: 2em;
+    width: 40%;  
+}
+
+footer{
+    text-align: center;
+}
+
+/*------------------------   classes           ------------------------------ */
+
+.even{
+    background-color: whitesmoke;
+}
+
+.odd{
+    background-color: lightcyan;
+}
+
+.small {
+    width: 150px;
+}
+
+/*------------------------   nav section only  ------------------------------ */
+nav ol li{
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 2em;
+}
+
+/*------------------------   table page  only  ------------------------------ */
+#table aside{
+    height: 600px; 
+    float: left; 
+    overflow: auto; 
+    margin-left: 2em;            
+}
+#table section{
+    width: 35%; 
+    height: 600px; 
+    float: left; 
+    overflow: auto;
+}
+#table table{
+    border: medium #000080 solid;
+    border-collapse: collapse;
+}
+
+#table td {
+    border: thin #000080 solid;
+    border-collapse: collapse;
+}
+
+#table th{
+    text-align: left;
+}
+
