@@ -9,11 +9,12 @@
 * {
     font-size: 11pt;
     font-family: Helvetica;
-    background: #808080
+    background: #808080;
+    color: white
 }
 
 body {
-    margin: 0 5% 0 5%;
+    margin: 0 15% 0 15%;
 }
 
 article {
@@ -21,26 +22,26 @@ article {
 }
 
 header {
-    overflow: auto; /* forces header to fit to figure */
     text-align: center;
 }
 
 header h1 {
-    padding-top: 2em;
+    padding-top: 1em;
     padding-bottom: 1em;
 }
 
 header h2 {
     padding-top: 1em;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
 }
 
 nav {
+    padding: 1em;
     text-align: center;
 }
 
 img {
-    max-width: 100%; /* image strinks to fit containtor but does not stretch */
+    max-width: 100%;
 }
 
 section {
@@ -49,7 +50,30 @@ section {
 }
 
 footer{
+    padding: 1em;
     text-align: center;
+}
+/* ================== Divider ================== */
+
+#divider {
+    width: 100%;
+    height: 1px;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+/* ================== linky stuff ================== */
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: green;
 }
 
 /* ================== classes ================== */
@@ -66,14 +90,43 @@ footer{
     width: 150px;
 }
 
+.content {
+    width: 90%;
+    margin: auto;
+    text-align:justify;
+}
+
 /* ================== nav section only ================== */
 nav ol li{
     display: inline-block;
     list-style-type: none;
     padding-right: 2em;
 }
+nav li img:hover{
+    background-image: url('images/nav_home_a.png');
+}
 
-/* ================== table page  only ================== */
+/* ================== form secti only ================== */
+
+form {
+    width: 90%;
+    margin: auto;
+}
+
+fieldset {
+    border: 1px solid black;
+    display: flex;
+}
+
+fieldset.wrapperthree {
+    float: left;
+}
+
+fieldset.wrapperthree label{
+    display: block;
+}
+
+/* ================== table page only ================== */
 #table aside{
     height: 600px; 
     float: left; 

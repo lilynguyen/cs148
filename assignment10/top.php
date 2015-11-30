@@ -5,7 +5,7 @@ require_once('lib/custom-functions.php');
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Faveō</title>
+    <title>Foveō</title>
     <meta charset="UTF-8">
     <meta name="author" content="Lily H. Nguyen">
     <meta name="description" content="Search and save you cup of warmth">

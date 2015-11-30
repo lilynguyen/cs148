@@ -1,6 +1,6 @@
 
 <!-- ===== START HEADER ===== -->
     <header>
-        <img src='images/faveo.png' alt='Faveo Logo'>
+        <a href='index.php'><img src='images/foveo.png' alt='Foveo Logo'></a>
     </header>
 <!-- ===== END HEADER ===== -->
