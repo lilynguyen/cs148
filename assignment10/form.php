@@ -208,72 +208,99 @@ if (isset($_POST["btnSubmit"])) {
       ?>
 
     <form action="<?php print $phpSelf; ?>" method="post" id="frmRegister">
-      <fieldset class="wrapperone">
-          <legend>Wrapper 1 Title</legend>
-          <fieldset class="wrappertwo">
-              <legend>Wrapper 2 Title</legend>
+      <fieldset class="formWrapper">
+      <legend>Wrapper 1 Title</legend>
 
-              <fieldset class="wrapperthree">
-                  <legend>Wrapper 3 Title</legend>
-                  <label for="txtFirstName" class="required">First Name
-                      <input type="text" id="txtFirstName" name="txtFirstName"
-                             value="<?php print $firstName; ?>"
-                             tabindex="100" maxlength="45" placeholder="Enter your first name"
-                             <?php if ($firstNameERROR) print 'class="mistake"'; ?>
-                             onfocus="this.select()"
-                             autofocus>
-                  </label>
-                  
-                  <label for="txtLastName" class="required">Last Name
-                      <input type="text" id="txtLastName" name="txtLastName"
-                             value="<?php print $lastName; ?>"
-                             tabindex="100" maxlength="45" placeholder="Enter your last name"
-                             <?php if ($firstNameERROR) print 'class="mistake"'; ?>
-                             onfocus="this.select()"
-                             autofocus>
-                  </label>
+        <fieldset class="userInformation">
+        <legend>Contributor Information</legend>
 
-                  <label for="txtEmail" class="required">Email
-                      <input type="text" id="txtEmail" name="txtEmail"
-                             value="<?php print $email; ?>"
-                             tabindex="120" maxlength="45" placeholder="Enter a valid email address"
-                             <?php if ($emailERROR) print 'class="mistake"'; ?>
-                             onfocus="this.select()" 
-                             >
-                  </label>
-              </fieldset> <!-- ends wrapper three -->
+            <label for="txtFirstName" class="required">First Name
+              <input type="text" id="txtFirstName" name="txtFirstName"
+                     value="<?php print $firstName; ?>"
+                     tabindex="100" maxlength="45" placeholder="Enter your first name"
+                     <?php if ($firstNameERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()"
+                     autofocus>
+            </label>
+            
+            <label for="txtLastName" class="required">Last Name
+              <input type="text" id="txtLastName" name="txtLastName"
+                     value="<?php print $lastName; ?>"
+                     tabindex="100" maxlength="45" placeholder="Enter your last name"
+                     <?php if ($lastNameERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()"
+                     autofocus>
+            </label>
 
-              <fieldset class="wrapperfour">
-                  <legend>Wrapper 4 Title</legend>
-                  <label for="txtFirstName" class="required">First Name
-                      <input type="text" id="txtFirstName" name="txtFirstName"
-                             value="<?php print $firstName; ?>"
-                             tabindex="100" maxlength="45" placeholder="Enter your first name"
-                             <?php if ($firstNameERROR) print 'class="mistake"'; ?>
-                             onfocus="this.select()"
-                             autofocus>
-                  </label>
-                  
-                  <label for="txtLastName" class="required">Last Name
-                      <input type="text" id="txtLastName" name="txtLastName"
-                             value="<?php print $lastName; ?>"
-                             tabindex="100" maxlength="45" placeholder="Enter your last name"
-                             <?php if ($firstNameERROR) print 'class="mistake"'; ?>
-                             onfocus="this.select()"
-                             autofocus>
-                  </label>
+            <label for="txtEmail" class="required">Email
+              <input type="text" id="txtEmail" name="txtEmail"
+                     value="<?php print $email; ?>"
+                     tabindex="100" maxlength="80" placeholder="Enter a valid email address"
+                     <?php if ($emailERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()" 
+                     >
+            </label>
+        </fieldset> <!-- ends wrapper userInformation -->
 
-                  <label for="txtEmail" class="required">Email
-                      <input type="text" id="txtEmail" name="txtEmail"
-                             value="<?php print $email; ?>"
-                             tabindex="120" maxlength="45" placeholder="Enter a valid email address"
-                             <?php if ($emailERROR) print 'class="mistake"'; ?>
-                             onfocus="this.select()" 
-                             >
-                  </label>
-              </fieldset> <!-- ends wrapper four -->
+        <fieldset class="wrapperfour">
+            <legend>Wrapper 4 Title</legend>
+            <label for="txtFirstName" class="required">First Name
+                <input type="text" id="txtFirstName" name="txtFirstName"
+                       value="<?php print $firstName; ?>"
+                       tabindex="100" maxlength="45" placeholder="Enter your first name"
+                       <?php if ($firstNameERROR) print 'class="mistake"'; ?>
+                       onfocus="this.select()"
+                       autofocus>
+            </label>
+            
+            <label for="txtLastName" class="required">Last Name
+                <input type="text" id="txtLastName" name="txtLastName"
+                       value="<?php print $lastName; ?>"
+                       tabindex="100" maxlength="45" placeholder="Enter your last name"
+                       <?php if ($firstNameERROR) print 'class="mistake"'; ?>
+                       onfocus="this.select()"
+                       autofocus>
+            </label>
 
-          </fieldset> <!-- ends wrapper Two -->
+            <label for="txtEmail" class="required">Email
+                <input type="text" id="txtEmail" name="txtEmail"
+                       value="<?php print $email; ?>"
+                       tabindex="120" maxlength="45" placeholder="Enter a valid email address"
+                       <?php if ($emailERROR) print 'class="mistake"'; ?>
+                       onfocus="this.select()" 
+                       >
+            </label>
+        </fieldset> <!-- ends wrapper four -->
+
+        <fieldset class="wrapperfive">
+            <legend>Wrapper 5 Title</legend>
+            <label for="txtFirstName" class="required">First Name
+                <input type="text" id="txtFirstName" name="txtFirstName"
+                       value="<?php print $firstName; ?>"
+                       tabindex="100" maxlength="45" placeholder="Enter your first name"
+                       <?php if ($firstNameERROR) print 'class="mistake"'; ?>
+                       onfocus="this.select()"
+                       autofocus>
+            </label>
+            
+            <label for="txtLastName" class="required">Last Name
+                <input type="text" id="txtLastName" name="txtLastName"
+                       value="<?php print $lastName; ?>"
+                       tabindex="100" maxlength="45" placeholder="Enter your last name"
+                       <?php if ($firstNameERROR) print 'class="mistake"'; ?>
+                       onfocus="this.select()"
+                       autofocus>
+            </label>
+
+            <label for="txtEmail" class="required">Email
+                <input type="text" id="txtEmail" name="txtEmail"
+                       value="<?php print $email; ?>"
+                       tabindex="120" maxlength="45" placeholder="Enter a valid email address"
+                       <?php if ($emailERROR) print 'class="mistake"'; ?>
+                       onfocus="this.select()" 
+                       >
+            </label>
+        </fieldset> <!-- ends wrapper five -->
 
           <fieldset class="buttons">
               <input type="submit" id="btnSubmit" name="btnSubmit" value="Register" tabindex="900" class="button">
