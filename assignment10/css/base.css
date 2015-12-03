@@ -5,20 +5,29 @@
 
 @import url('reset.css');
 
+@font-face {
+    font-family: REIS;
+    src: url(REIS-Regular.ttf);
+}
+
 /* ================== standard elements ================== */
 * {
     font-size: 11pt;
-    font-family: Helvetica;
-    background: #808080;
-    color: white
+    background-color: #808080;
+    color: white;
 }
 
 body {
     margin: 0 15% 0 15%;
+    font-size: 11pt;
+    background-color: #808080;
+    color: white;
 }
 
 article {
-    padding: 2em;
+    font-family: Helvetica;
+    padding: 0px 5em 0px 5em;
+    margin: auto;
 }
 
 header {
@@ -91,47 +100,100 @@ a:hover {
 }
 
 .content {
-    width: 90%;
+    /*width: 90%;*/
     margin: auto;
     text-align:justify;
 }
 
 /* ================== nav section only ================== */
 
-nav ol li{
-    display: inline-block;
-    list-style-type: none;
-    padding-right: 2em;
+nav {
+    padding: 0em;
 }
-nav li img:hover{
-    background-image: url('images/nav_home_a.png');
+
+.navbar-default .navbar-nav>li>a {
+    font-family: REIS;
+    color: white;
+    font-size: 35pt;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    font-family: REIS;
+    color: #ff9700;
+    font-size: 35pt;
+}
+
+.navbar {
+    border: none;
+    margin-bottom: 0px;
+}
+
+.navbar-default {
+    /*background-color: #808080;*/
+}
+
+.container-fluid {
+/*    padding-left: 6em;
+    padding-right: 6em;*/
+}
+
+.navbar-nav>li {
+    padding-bottom: 1em;
+}
+
+.navbar-nav {
+/*    margin-left: auto;
+    margin-right: auto;*/
+    padding-left: 4.5em;
+    padding-right: 4.5em;
 }
 
 /* ================== form secti only ================== */
 
+.formWrapper {
+    padding: 1.5em;
+}
+
 form {
     width: 90%;
     margin: auto;
-    text-align: left;
-    float: none;
+    /*text-align: left;*/
+    /*float: none;*/
 }
 
 fieldset {
-    border: 1px solid black;
-    display: flex;
+    /*border: 1px solid black;*/
 }
 
 fieldset label{
-    display: block;
-    text-align: right;
+
 }
 
-fieldset.userInformation {
-    width: 41%;
+.userInformation {
+    /*width: 100%;*/
+    padding: 2em;
 }
 
 .userInformation input{
-    width: 13em;
+    width: 20em;
+}
+
+
+
+.teaType {
+    padding: 1.5em;
+}
+
+.reviewInput {
+    padding: 1.5em;
+}
+
+.buttons {
+    padding: 1.5em
+}
+
+label {
+    display: flex;
 }
 
 /* ================== table page only ================== */

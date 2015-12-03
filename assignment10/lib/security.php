@@ -1,7 +1,4 @@
 <?php
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//performs a few security checks
 function securityCheck($path_parts, $yourURL, $form = false) {
     $passed = true; // start off thinking everything is good until a test fails
     
@@ -21,6 +18,7 @@ function securityCheck($path_parts, $yourURL, $form = false) {
     $whiteListPages[] = "tables.php";
     $whiteListPages[] = "index.php";
     $whiteListPages[] = "form.php";
+    $whiteListPages[] = "test.php";
 
     //add all the folders to this array
     $whiteListFolders = array();
@@ -75,8 +73,7 @@ function securityCheck($path_parts, $yourURL, $form = false) {
         print "</pre></p>";
     }
     
-    if (!$passed) {
-        //send message to me
+    if (!$passed) { // SENDS MESSAGE TO ME
         $message = "<p>Login failed: " . date("F j, Y") . " at " . date("h:i:s") . "</p>\n" . $message;
 
         $to = ADMIN_EMAIL;
@@ -86,9 +83,7 @@ function securityCheck($path_parts, $yourURL, $form = false) {
         $subject = "Login Status ";
 
         $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
-
     }
     return $passed;
 }
-
 ?>
