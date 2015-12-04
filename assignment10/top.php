@@ -15,14 +15,7 @@ require_once('lib/custom-functions.php');
     <script src="//html5shim.googlecode.com/sin/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css" type="text/css" media="screen">
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
     <?php
     $debug = false;        
@@ -33,6 +26,7 @@ require_once('lib/custom-functions.php');
     require_once($includeLibPath . 'mailMessage.php');
     require_once('lib/security.php');
     require_once($includeDBPath . 'Database.php');
+    require_once('lib/validation_functions.php');
     
     // ====================================================================
     // PATH SETUP
@@ -117,6 +111,6 @@ require_once('lib/custom-functions.php');
 <!-- ===== START BODY ===== -->
   <?php
   print '<body id="' . $path_parts['filename'] . '">';
-  include "header.php";
+  // include "header.php";
   include "nav.php";
   ?>

@@ -10,28 +10,37 @@
     src: url(REIS-Regular.ttf);
 }
 
+@font-face {
+    font-family: HelvNeue;
+    src: url(HelveticaNeue-Thin.ttf);
+}
+
 /* ================== standard elements ================== */
 * {
     font-size: 11pt;
-    background-color: #808080;
-    color: white;
+    font-family: Helvetica;
+    color: black;
 }
 
 body {
-    margin: 0 15% 0 15%;
-    font-size: 11pt;
-    background-color: #808080;
-    color: white;
+/*    margin: 0 15% 0 15%;*/
+    background-color: white;
 }
 
 article {
-    font-family: Helvetica;
-    padding: 0px 5em 0px 5em;
+    width: 60%;
     margin: auto;
+    padding: 2em;
 }
 
 header {
     text-align: center;
+    /*background-color: rgba(0, 0, 0, 0.25);*/
+}
+
+.headerBar {
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 header h1 {
@@ -42,11 +51,6 @@ header h1 {
 header h2 {
     padding-top: 1em;
     padding-bottom: 1em;
-}
-
-nav {
-    padding: 1em;
-    text-align: center;
 }
 
 img {
@@ -62,6 +66,67 @@ footer{
     padding: 1em;
     text-align: center;
 }
+
+ .content {
+    /*width: 60%;*/
+    margin: auto;
+    text-align:justify;
+    background-color: rgba(0, 0, 0, 0.25);
+    /*border-radius: 16px;*/
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ }
+
+ /* ================== Buttony Stuffs ================== */
+
+header {
+    height: 60em;
+    background-size: 100%;
+    background-image: url('../images/bg2.jpg');
+
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-iteration-count: 10;
+}
+
+@-webkit-keyframes example {
+    /*0%   {background-image: url('../images/bg2.jpg');}*/
+    25%  {background-image: url('../images/bg3.jpg');}
+    50%  {background-image: url('../images/bg2.jpg');}
+    75%  {background-image: url('../images/bg3.jpg');}
+    100% {background-image: url('../images/bg2.jpg');}
+}
+
+header img {
+    width: 500px;
+    height: auto;
+    padding-top: 10em;
+ }
+
+ /* ================== Buttony Stuffs ================== */
+
+.button {
+    border-radius: 6px;
+    border: none;
+    padding: 6px;
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: #fafafa;
+    color: #555555;
+    margin-right: 1em;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {
+    background-color: #e1e1e1;
+    transition-duration: 0.4s;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 /* ================== Divider ================== */
 
 #divider {
@@ -99,53 +164,46 @@ a:hover {
     width: 150px;
 }
 
-.content {
-    /*width: 90%;*/
-    margin: auto;
-    text-align:justify;
-}
-
 /* ================== nav section only ================== */
 
 nav {
-    padding: 0em;
-}
-
-.navbar-default .navbar-nav>li>a {
-    font-family: REIS;
-    color: white;
-    font-size: 35pt;
-}
-
-.navbar-default .navbar-nav>li>a:hover {
-    font-family: REIS;
-    color: #ff9700;
-    font-size: 35pt;
-}
-
-.navbar {
-    border: none;
-    margin-bottom: 0px;
-}
-
-.navbar-default {
-    /*background-color: #808080;*/
-}
-
-.container-fluid {
-/*    padding-left: 6em;
-    padding-right: 6em;*/
-}
-
-.navbar-nav>li {
+    /*background-color: rgba(0, 0, 0, 0.25);*/
+    text-align: center;
+    padding: .5em;
     padding-bottom: 1em;
 }
 
-.navbar-nav {
-/*    margin-left: auto;
-    margin-right: auto;*/
-    padding-left: 4.5em;
-    padding-right: 4.5em;
+nav ol li{
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 2em;
+
+    font-family: HelvNeue;
+    color: white;
+    font-size: 14pt;
+}
+
+nav ol li a{
+    font-family: HelvNeue;
+    color: black;
+    font-size: 14pt;
+    text-decoration: none;
+}
+
+nav ol li a:visited{
+    color: black;
+}
+
+nav ol li a:hover{
+    color: #a6c249;
+}
+
+nav ol li a:link{
+    color: black;
+}
+
+.activePage {
+    color: #a6c249;
 }
 
 /* ================== form secti only ================== */
@@ -154,46 +212,110 @@ nav {
     padding: 1.5em;
 }
 
+legend {
+    font-family: REIS;
+    font-size: 20pt;
+    color: #ff9700;
+}
+
+input[type="text"] {
+    border-radius: 4px;
+    border:none;
+    background-color: #e1e1e1; 
+    color: #555555;
+}
+
+textarea {
+    border-radius: 4px;
+    border:none;
+    background-color: #e1e1e1; 
+    color: #555555;
+}
+
 form {
-    width: 90%;
+    /*width: 90%;*/
     margin: auto;
-    /*text-align: left;*/
-    /*float: none;*/
+    text-align: left;
+    float: none;
+    padding-top: 3em;
+}
+
+label {
+    margin-bottom: 1em;
+    color: #a6c249;
 }
 
 fieldset {
     /*border: 1px solid black;*/
+    margin-bottom: 1em;
 }
-
-fieldset label{
-
-}
-
 .userInformation {
-    /*width: 100%;*/
-    padding: 2em;
+    width: 50%;
 }
 
 .userInformation input{
-    width: 20em;
+    width: 13em;
+    padding: 3px;
 }
 
-
-
-.teaType {
-    padding: 1.5em;
+.userInformation label{
+    display: block;
+    text-align: right;
 }
 
-.reviewInput {
-    padding: 1.5em;
+.teaInformation {
+    /*width: 100%;*/
 }
 
-.buttons {
-    padding: 1.5em
+.teaInformation input {
+    padding: 3px;
 }
 
-label {
+#txtTeaName {
+    width: 22em;
+}
+
+#txtBrandName {
+    width: 40em;
+}
+
+.teaInformation select {
+    width: 6em;
+    background-color: #e1e1e1; 
+    color: #555555;
+}
+
+.teaInformation .tiOneRow {
     display: flex;
+}
+
+.teaInformation label {
+    padding-right: 2em;
+}
+
+.reviewInformation {
+    /*width: 100%;*/
+}
+
+.reviewInformation label {
+    display: block;
+}
+
+.reviewInformation input {
+    padding: 3px;
+}
+
+#txtBody {
+    width: 99.5%;
+    height: 10em;
+}
+
+#txtBody textarea {
+    padding: 2em;
+}
+
+.buttonGroup {
+    text-align: center;
 }
 
 /* ================== table page only ================== */

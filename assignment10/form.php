@@ -28,6 +28,11 @@ $firstName = "";
 $lastName = "";
 $email = ""; // default to me so that it makes life easier for debugging
 
+$teaName = "";
+$brandName = "";
+
+$radioRating = "";
+$checkServedAs = "";
 
 // SECTION: 1d form error flags
 // Initialize Error Flags one for each form element we validate
@@ -35,6 +40,12 @@ $email = ""; // default to me so that it makes life easier for debugging
 $firstNameERROR = false;
 $lastNameERROR = false;
 $emailERROR = false;
+
+$teaNameERROR = false;
+$brandNameERROR = false;
+
+$ratingERROR = false; 
+$servedAsERROR = false; 
 
 
 // SECTION: 1e misc variables
@@ -51,11 +62,11 @@ if (isset($_POST["btnSubmit"])) {
     // Security Check
     // ===========================================
 
-    // if (!securityCheck(true)) {
-    //     $msg = "<p>Sorry you cannot access this page. ";
-    //     $msg .= "Security breach detected and reported</p>";
-    //     die($msg);
-    // }
+    if (!securityCheck($path_parts, $yourURL, true)) {
+        $msg = "<p>Sorry you cannot access this page. ";
+        $msg .= "Security breach detected and reported</p>";
+        die($msg);
+    }
     
     // ===========================================
     // SANITATION: Potential Code Input
@@ -67,6 +78,11 @@ if (isset($_POST["btnSubmit"])) {
     $dataRecord[] = $lastName;
     $email = filter_var($_POST["txtEmail"], FILTER_SANITIZE_EMAIL);
     $dataRecord[] = $email;
+
+    $teaName = htmlentities($_POST["txtTeaName"], ENT_QUOTES, "UTF-8");
+    $dataRecord[] = $teaName;
+    $brandName = htmlentities($_POST["txtBrandName"], ENT_QUOTES, "UTF-8");
+    $dataRecord[] = $brandName;
 
     // ===========================================
     // SANITATION: Input Type
@@ -92,6 +108,21 @@ if (isset($_POST["btnSubmit"])) {
     } elseif (!verifyEmail($email)) {
         $errorMsg[] = "Your email address appears to be incorrect.";
         $emailERROR = true;
+    }
+
+    if ($teaName == "") {
+        $errorMsg[] = "Please enter a tea name";
+        $teaNameERROR = true;
+    } elseif (!verifyAlphaNum($teaName)) {
+        $errorMsg[] = "Your tea name appears to have extra character.";
+        $teaNameERROR = true;
+    }
+    if ($brandName == "") {
+        $errorMsg[] = "Please enter a brand name";
+        $brandNameERROR = true;
+    } elseif (!verifyAlphaNum($brandName)) {
+        $errorMsg[] = "Your brand name appears to have extra character.";
+        $brandNameERROR = true;
     }
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     //
@@ -155,6 +186,7 @@ if (isset($_POST["btnSubmit"])) {
 ?>
 
 <!-- ===== THE ACTUAL FORM ===== -->
+<div class="content"> 
 <article>
   <?php
   //####################################
@@ -214,13 +246,15 @@ if (isset($_POST["btnSubmit"])) {
 
     <form action="<?php print $phpSelf; ?>" method="post" id="frmRegister">
       <fieldset class="formWrapper">
-      <legend>Wrapper 1 Title</legend>
+      <legend>Submit a Review!</legend>
+      <p>Info abt form here</p>
+      <br>
 
         <fieldset class="userInformation">
         <legend>Contributor Information</legend>
 
             <label for="txtFirstName" class="required">First Name
-              <input type="text" class="form-control" id="txtFirstName" name="txtFirstName"
+              <input type="text" id="txtFirstName" name="txtFirstName"
                      value="<?php print $firstName; ?>"
                      tabindex="100" maxlength="45" placeholder="Enter your first name"
                      <?php if ($firstNameERROR) print 'class="mistake"'; ?>
@@ -229,7 +263,7 @@ if (isset($_POST["btnSubmit"])) {
             </label>
             
             <label for="txtLastName" class="required">Last Name
-              <input type="text" class="form-control" id="txtLastName" name="txtLastName"
+              <input type="text" id="txtLastName" name="txtLastName"
                      value="<?php print $lastName; ?>"
                      tabindex="100" maxlength="45" placeholder="Enter your last name"
                      <?php if ($lastNameERROR) print 'class="mistake"'; ?>
@@ -238,27 +272,129 @@ if (isset($_POST["btnSubmit"])) {
             </label>
 
             <label for="txtEmail" class="required">Email
-              <input type="text" class="form-control" id="txtEmail" name="txtEmail"
+              <input type="text" id="txtEmail" name="txtEmail"
                      value="<?php print $email; ?>"
                      tabindex="100" maxlength="80" placeholder="Enter a valid email address"
                      <?php if ($emailERROR) print 'class="mistake"'; ?>
                      onfocus="this.select()" 
                      >
             </label>
-        </fieldset> <!-- ends wrapper userInformation -->
+        </fieldset> <!-- ends userInformation -->
 
-          <fieldset class="buttons">
-              <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit" tabindex="900" class="btn btn-default">
-          </fieldset> <!-- ends buttons -->
+        <fieldset class="teaInformation">
+        <legend>Tea Information</legend>
 
-      </fieldset> <!-- Ends Wrapper one -->
+            <div class="tiOneRow">
+
+            <label for="txtTeaName" class="required">Tea Name
+              <input type="text" id="txtTeaName" name="txtTeaName"
+                     value="<?php print $teaName; ?>"
+                     tabindex="100" maxlength="45" placeholder="Enter tea name"
+                     <?php if ($teaNameERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()"
+                     >
+            </label>
+            
+            <label for="txtLastName" class="required">Tea Type
+              <select name="teaTypes" id="typeTea">
+                <option value="green">Green</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="yellow">Yellow</option>
+                <option value="red">Red</option>
+                <option value="puer">Puer</option>
+                <option value="oolong">Oolong</option>
+                <option value="herbal">Herbal</option>
+              </select>
+            </label>
+
+            </div>
+
+            <label for="txtBrandName" class="required">Brand
+              <input type="text" id="txtBrandName" name="txtBrandName"
+                     value="<?php print $brandName; ?>"
+                     tabindex="100" maxlength="80" placeholder="Enter a valid brand name"
+                     <?php if ($brandNameERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()" 
+                     >
+            </label>
+        </fieldset> <!-- ends teaInformation -->
+
+        <fieldset class="reviewInformation">
+        <legend>Review</legend>
+
+            <label for="radioRating" class="required">Rating
+              <input type="radio" id="radioRating" name="radioRating"
+                     value="1"
+                     <?php if ($ratingERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()"
+                     >
+              <input type="radio" id="radioRating" name="radioRating"
+                     value="2"
+                     <?php if ($ratingERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()"
+                     >
+              <input type="radio" id="radioRating" name="radioRating"
+                     value="3"
+                     <?php if ($ratingERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()"
+                     >
+              <input type="radio" id="radioRating" name="radioRating"
+                     value="4"
+                     <?php if ($ratingERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()"
+                     >
+              <input type="radio" id="radioRating" name="radioRating"
+                     value="5"
+                     <?php if ($ratingERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()"
+                     >
+            </label>
+            
+            <label for="checkServedAs" class="required">Served As
+              <input type="checkbox" id="checkServedAs" name="checkServedAs"
+                     value="hot"
+                     <?php if ($servedAsERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()"
+                     >Hot
+              <input type="checkbox" id="checkServedAs" name="checkServedAs"
+                     value="chilled"
+                     <?php if ($servedAsERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()"
+                     >Chilled
+              <input type="checkbox" id="checkServedAs" name="checkServedAs"
+                     value="pressed"
+                     <?php if ($servedAsERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()"
+                     >Pressed
+            </label>
+
+            <label for="txtEmail" class="required">Body
+              <textarea type="text" id="txtBody" name="txtEmail"
+                     value="<?php print $email; ?>"
+                     tabindex="100" maxlength="80" placeholder="Enter"
+                     <?php if ($emailERROR) print 'class="mistake"'; ?>
+                     onfocus="this.select()" 
+                     >
+              </textarea>
+            </label>
+        </fieldset> <!-- ends reviewInformation -->
+
+          <fieldset class="buttonGroup">
+              <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit" tabindex="900" class="button">
+              <input type="reset" id="btnReset" name="btnReset" value="Reset" tabindex="900" class="button">
+          </fieldset> <!-- end buttons -->
+
+      </fieldset> <!-- end formWrapper -->
     </form>
+
 
   <?php
   } // end body submit
   ?>
 
 </article>
+</div>
 <!-- ===== THE ACTUAL FORM END ===== -->
 
 <?php include "footer.php"; ?>
