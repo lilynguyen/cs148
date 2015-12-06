@@ -18,7 +18,7 @@
 /* ================== standard elements ================== */
 * {
     font-size: 11pt;
-    font-family: Helvetica;
+    font-family: HelvNeue;
     color: black;
 }
 
@@ -171,6 +171,7 @@ nav {
     text-align: center;
     padding: .5em;
     padding-bottom: 1em;
+    padding-top: .75em;
 }
 
 nav ol li{
@@ -215,14 +216,13 @@ nav ol li a:link{
 legend {
     font-family: REIS;
     font-size: 20pt;
-    color: #ff9700;
-}
-
-input[type="text"] {
-    border-radius: 4px;
-    border:none;
-    background-color: #e1e1e1; 
-    color: #555555;
+    color: #a6c249;
+    background-color: white;
+    width: 100%;
+    padding: 5px;
+    padding-bottom: 8px; 
+    padding-left: 14px;
+    ;
 }
 
 textarea {
@@ -242,7 +242,7 @@ form {
 
 label {
     margin-bottom: 1em;
-    color: #a6c249;
+    /*font-weight: bold;*/
 }
 
 fieldset {
@@ -250,12 +250,18 @@ fieldset {
     margin-bottom: 1em;
 }
 .userInformation {
-    width: 50%;
+    /*width: 50%;*/
+}
+
+.userInformation .chunk {
+    width: 45%;
+    padding-top: 1em;
 }
 
 .userInformation input{
     width: 13em;
-    padding: 3px;
+    padding: 5px;
+    padding-left: 8px;
 }
 
 .userInformation label{
@@ -268,54 +274,89 @@ fieldset {
 }
 
 .teaInformation input {
-    padding: 3px;
+    padding: 5px;
+    padding-left: 8px;
 }
 
 #txtTeaName {
-    width: 22em;
+    width: 23em;
 }
 
 #txtBrandName {
-    width: 40em;
+    width: 37em;
 }
 
 .teaInformation select {
     width: 6em;
+    height: 2em;
     background-color: #e1e1e1; 
     color: #555555;
+    border: none;
+    padding: 8px;
 }
 
 .teaInformation .tiOneRow {
     display: flex;
 }
 
+.teaInformation .chunk {
+    width: 90%;
+    padding-left: 2em;
+    padding-top: 1em;
+}
+
 .teaInformation label {
-    padding-right: 2em;
+    padding-right: 1em;
 }
 
 .reviewInformation {
     /*width: 100%;*/
 }
 
+.reviewInformation .chunk {
+    width: 90%;
+    padding-left: 1.5em;
+    padding-top: 1em;
+}
+
 .reviewInformation label {
-    display: block;
+    padding-right: .5em;
 }
 
 .reviewInformation input {
-    padding: 3px;
+    padding: 5px;
+    padding-left: 8px;
 }
 
-#txtBody {
+#txtDescript {
     width: 99.5%;
     height: 10em;
 }
 
 #txtBody textarea {
-    padding: 2em;
+    /*padding: 3em;*/
+}
+
+.checkboxes {
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .buttonGroup {
     text-align: center;
+}
+
+.mistake input[type="text"]{
+    color: white;
+    font-weight: bold;
+    background-color: red;
+}
+
+input[type="text"] {
+    border-radius: 4px;
+    border:none;
+    background-color: #e1e1e1; 
+    color: #555555;
 }
 
 /* ================== table page only ================== */

@@ -29,10 +29,12 @@ $lastName = "";
 $email = ""; // default to me so that it makes life easier for debugging
 
 $teaName = "";
+$teaType = "";
 $brandName = "";
 
 $radioRating = "";
 $checkServedAs = "";
+$descript = "";
 
 // SECTION: 1d form error flags
 // Initialize Error Flags one for each form element we validate
@@ -42,10 +44,12 @@ $lastNameERROR = false;
 $emailERROR = false;
 
 $teaNameERROR = false;
+$teaTypeError = false;
 $brandNameERROR = false;
 
 $ratingERROR = false; 
-$servedAsERROR = false; 
+$servedAsERROR = false;
+$descriptERROR = false; 
 
 
 // SECTION: 1e misc variables
@@ -83,6 +87,9 @@ if (isset($_POST["btnSubmit"])) {
     $dataRecord[] = $teaName;
     $brandName = htmlentities($_POST["txtBrandName"], ENT_QUOTES, "UTF-8");
     $dataRecord[] = $brandName;
+
+    $descript = htmlentities($_POST["txtDescript"], ENT_QUOTES, "UTF-8");
+    $dataRecord = $descript;
 
     // ===========================================
     // SANITATION: Input Type
@@ -123,6 +130,22 @@ if (isset($_POST["btnSubmit"])) {
     } elseif (!verifyAlphaNum($brandName)) {
         $errorMsg[] = "Your brand name appears to have extra character.";
         $brandNameERROR = true;
+    }
+
+    if ($radioRating == "") {
+      $errorMsg[] = "Please select a rating";
+      $ratingERROR = true;
+    }
+    if ($servedAsERROR == "") {
+      $errorMsg[] = "Please select a serving style";
+      $servedAsERROR = true;
+    }
+    if ($descript == "") {
+        $errorMsg[] = "Please enter a description";
+        $descriptERROR = true;
+    } elseif (!verifyAlphaNum($descript)) {
+        $errorMsg[] = "Your description name appears to have extra character.";
+        $descriptERROR = true;
     }
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     //
@@ -253,6 +276,7 @@ if (isset($_POST["btnSubmit"])) {
         <fieldset class="userInformation">
         <legend>Contributor Information</legend>
 
+          <div class="chunk">
             <label for="txtFirstName" class="required">First Name
               <input type="text" id="txtFirstName" name="txtFirstName"
                      value="<?php print $firstName; ?>"
@@ -279,11 +303,14 @@ if (isset($_POST["btnSubmit"])) {
                      onfocus="this.select()" 
                      >
             </label>
+            </div>
+
         </fieldset> <!-- ends userInformation -->
 
         <fieldset class="teaInformation">
         <legend>Tea Information</legend>
 
+            <div class="chunk">
             <div class="tiOneRow">
 
             <label for="txtTeaName" class="required">Tea Name
@@ -318,11 +345,14 @@ if (isset($_POST["btnSubmit"])) {
                      onfocus="this.select()" 
                      >
             </label>
+            </div>
+
         </fieldset> <!-- ends teaInformation -->
 
         <fieldset class="reviewInformation">
         <legend>Review</legend>
 
+            <div class="chunk">
             <label for="radioRating" class="required">Rating
               <input type="radio" id="radioRating" name="radioRating"
                      value="1"
@@ -351,33 +381,41 @@ if (isset($_POST["btnSubmit"])) {
                      >
             </label>
             
+            <div class="checkboxes">
             <label for="checkServedAs" class="required">Served As
-              <input type="checkbox" id="checkServedAs" name="checkServedAs"
+              <label><input type="checkbox" id="checkServedAs" name="checkServedAs"
                      value="hot"
                      <?php if ($servedAsERROR) print 'class="mistake"'; ?>
                      onfocus="this.select()"
                      >Hot
-              <input type="checkbox" id="checkServedAs" name="checkServedAs"
+              </label>
+              <label><input type="checkbox" id="checkServedAs" name="checkServedAs"
                      value="chilled"
                      <?php if ($servedAsERROR) print 'class="mistake"'; ?>
                      onfocus="this.select()"
                      >Chilled
-              <input type="checkbox" id="checkServedAs" name="checkServedAs"
+              </label>
+              <label><input type="checkbox" id="checkServedAs" name="checkServedAs"
                      value="pressed"
                      <?php if ($servedAsERROR) print 'class="mistake"'; ?>
                      onfocus="this.select()"
                      >Pressed
+              </label>
             </label>
+            </div>
 
-            <label for="txtEmail" class="required">Body
-              <textarea type="text" id="txtBody" name="txtEmail"
-                     value="<?php print $email; ?>"
-                     tabindex="100" maxlength="80" placeholder="Enter"
-                     <?php if ($emailERROR) print 'class="mistake"'; ?>
+            <label for="txtDescript" class="required">Description<br><br>
+              <textarea type="text" id="txtDescript" name="txtDescript"
+                     value="<?php print $descript; ?>"
+                     tabindex="100" maxlength="800" placeholder="Enter description"
+                     <?php if ($descriptERROR) print 'class="mistake"'; ?>
                      onfocus="this.select()" 
                      >
               </textarea>
             </label>
+
+            </div>
+
         </fieldset> <!-- ends reviewInformation -->
 
           <fieldset class="buttonGroup">
