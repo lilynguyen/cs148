@@ -1,31 +1,41 @@
 <?php
-// ==================================================================== 
-// main home page for the site 
-// ====================================================================  
-
 include "top.php";
 include "header.php";
 ?>
 
 <div class="content">
+<article class='home'>
 
-<article>
-<h1>Sample Page</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at lectus et metus consectetur ullamcorper at id tortor. Ut dapibus mi eu arcu pharetra[ luctus. Nunc cursus metus nec dignissim laoreet. Morbi at ante quam. Maecenas eu urna non ante cursus convallis vehicula quis est. Mauris nec orci nec ante semper laoreet. Sed eu dapibus tortor, nec iaculis tellus. Aliquam aliquam sem ut augue vehicula, id efficitur purus lobortis. In in scelerisque tortor. Donec nec felis enim. Mauris viverra in erat sed consectetur. Nulla eleifend libero quis sapien bibendum, eu laoreet massa malesuada. Etiam venenatis tincidunt metus, sit amet tristique ante dapibus sed. Vestibulum ligula risus, ultrices vehicula sapien ac, tincidunt facilisis tortor]
+<div class='definition'>
+<span class="word">foveo</span> /ˈfo.we.oː/ <i>v.</i>
+<ul>
+<li><b>1</b>. I warm, keep warm. </li>
+<li><b>2</b>. I nurture, cherish, foster. </li>
+<li><b>3</b>. I foment, bathe. </li>
+<li><b>4</b>. I support, favor, encourage, comfort, assist.</li>
+</ul>
+</div>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at lectus et metus consectetur ullamcorper at id tortor. Ut dapibus mi eu arcu pharetra[ luctus. Nunc cursus metus nec dignissim laoreet. Morbi at ante quam. Maecenas eu urna non ante cursus convallis vehicula quis est. Mauris nec orci nec ante semper laoreet. Sed eu dapibus tortor, nec iaculis tellus. Aliquam aliquam sem ut augue vehicula, id efficitur purus lobortis. In in scelerisque tortor. Donec nec felis enim. Mauris viverra in erat sed consectetur. Nulla eleifend libero quis sapien bibendum, eu laoreet massa malesuada. Etiam venenatis tincidunt metus, sit amet tristique ante dapibus sed. Vestibulum ligula risus, ultrices vehicula sapien ac, tincidunt facilisis tortor]
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at lectus et metus consectetur ullamcorper at id tortor. Ut dapibus mi eu arcu pharetra[ luctus. Nunc cursus metus nec dignissim laoreet. Morbi at ante quam. Maecenas eu urna non ante cursus convallis vehicula quis est. Mauris nec orci nec ante semper laoreet. Sed eu dapibus tortor, nec iaculis tellus. Aliquam aliquam sem ut augue vehicula, id efficitur purus lobortis. In in scelerisque tortor. Donec nec felis enim. Mauris viverra in erat sed consectetur. Nulla eleifend libero quis sapien bibendum, eu laoreet massa malesuada. Etiam venenatis tincidunt metus, sit amet tristique ante dapibus sed. Vestibulum ligula risus, ultrices vehicula sapien ac, tincidunt facilisis tortor]
+<h1>About</h1>
+<div class="text">
+	<p>
+	Looking for a warm hug in a cup? Why not have some tea? Nothing better than the earthy, healthy,
+	and calming taste of tea. With over a thousand types of teas in the world, there is surely one for
+	you. From simple gunpowder tea to exotic african root rooibos, the original plant tea better known
+	as <i>Camelia Sinensis</i> takes on many profiles.
+	</p>
+	<p>
+	Foveo lets you search through user-submitted
+	reviews of a variety of teas and a variety of brands. Whole-hearted, honest reviews and ratings on
+	the teas they've tasted. Have an opinion of your own? Be sure to submit a review for any and all teas
+	you've personally tried!
+	</p>
+</div>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at lectus et metus consectetur ullamcorper at id tortor. Ut dapibus mi eu arcu pharetra[ luctus. Nunc cursus metus nec dignissim laoreet. Morbi at ante quam. Maecenas eu urna non ante cursus convallis vehicula quis est. Mauris nec orci nec ante semper laoreet. Sed eu dapibus tortor, nec iaculis tellus. Aliquam aliquam sem ut augue vehicula, id efficitur purus lobortis. In in scelerisque tortor. Donec nec felis enim. Mauris viverra in erat sed consectetur. Nulla eleifend libero quis sapien bibendum, eu laoreet massa malesuada. Etiam venenatis tincidunt metus, sit amet tristique ante dapibus sed. Vestibulum ligula risus, ultrices vehicula sapien ac, tincidunt facilisis tortor]
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at lectus et metus consectetur ullamcorper at id tortor. Ut dapibus mi eu arcu pharetra[ luctus. Nunc cursus metus nec dignissim laoreet. Morbi at ante quam. Maecenas eu urna non ante cursus convallis vehicula quis est. Mauris nec orci nec ante semper laoreet. Sed eu dapibus tortor, nec iaculis tellus. Aliquam aliquam sem ut augue vehicula, id efficitur purus lobortis. In in scelerisque tortor. Donec nec felis enim. Mauris viverra in erat sed consectetur. Nulla eleifend libero quis sapien bibendum, eu laoreet massa malesuada. Etiam venenatis tincidunt metus, sit amet tristique ante dapibus sed. Vestibulum ligula risus, ultrices vehicula sapien ac, tincidunt facilisis tortor]
 </article>
+</div>
 
-
-
-
-<?php print '</div>';
-
+<?php
 include "footer.php";
 ?>

@@ -19,6 +19,10 @@ function securityCheck($path_parts, $yourURL, $form = false) {
     $whiteListPages[] = "index.php";
     $whiteListPages[] = "form.php";
     $whiteListPages[] = "test.php";
+    $whiteListPages[] = "info.php";
+    $whiteListPages[] = "reviews.php";
+    $whiteListPages[] = "contact.php";
+    $whiteListPages[] = "edit.php";
 
     //add all the folders to this array
     $whiteListFolders = array();
