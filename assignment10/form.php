@@ -33,9 +33,11 @@ $teaType = "";
 $brandName = "Dobra Tea VT";
 
 $rdoRating = "5";
-$chkHot = false;
-$chkChilled = false;
-$chkPressed = false;
+
+$chkHot = "";
+$chkChilled = "";
+$chkPressed = "";
+
 $descript = "";
 
 // ===========================================
@@ -59,7 +61,11 @@ $descriptERROR = false;
 // ===========================================
 
 $errorMsg = array();
-$dataRecord = array(); // array used to hold form values that will be written to a CSV file
+
+$dataRecord = array();
+$dataRecord2 = array();
+$dataRecord3 = array();
+
 $mailed = false;
 $dataEntered = false;
 
@@ -94,35 +100,40 @@ if (isset($_POST["btnSubmit"])) {
     $dataRecord[] = $email;
 
     $teaName = htmlentities($_POST["txtTeaName"], ENT_QUOTES, "UTF-8");
-    // $dataRecord[] = $teaName;
+    $dataRecord2[] = $teaName;
+    $dataRecord3[] = $teaName;
     $teaType = htmlentities($_POST["teaTypes"]);
-    // $dataRecord[] = $teaType;
+    $dataRecord2[] = $teaType;
     $brandName = htmlentities($_POST["txtBrandName"], ENT_QUOTES, "UTF-8");
-    // $dataRecord[] = $brandName;
+    $dataRecord2[] = $brandName;
 
     $rdoRating = htmlentities($_POST["rdoRating"], ENT_QUOTES, "UTF-8");
-    // $dataRecord[] = $rdoRating;
-
+    $dataRecord3[] = $rdoRating;
 
     if (isset($_POST["chkHot"])) {
-      $chkHot = true;
+      $chkHot = 'Hot';
     } else {
-      $chkHot = false;
+      $chkHot = '';
     }
     if (isset($_POST["chkChilled"])) {
-      $chkChilled = true;
+      $chkChilled = 'Chilled';
     } else {
-      $chkChilled = false;
+      $chkChilled = '';
     }
     if (isset($_POST["chkPressed"])) {
-      $chkPressed = true;
+      $chkPressed = 'Pressed';
     } else {
-      $chkPressed = false;
+      $chkPressed = '';
     }
-    // $dataRecord[] = $chkHot+$chkChilled+$chkChilled;
+
+    $addThis = $chkHot;
+    $addThis .= $chkChilled;
+    $addThis .= $chkPressed;
+    print $addThis;
+    $dataRecord3[] = $addThis;
 
     $descript = htmlentities($_POST["txtDescript"], ENT_QUOTES, "UTF-8");
-    // $dataRecord = $descript;
+    $dataRecord3[] = $descript;
 
     // ===========================================
     // SANITATION: Input Type
@@ -193,34 +204,32 @@ if (isset($_POST["btnSubmit"])) {
         // PUTTING THINGS INTO DB (rn it's into a csv)
         // ===========================================
 
-        // $fileExt = ".csv";
-        // $myFileName = "fileName";
-        // $filename = $myFileName . $fileExt;
-        // if ($debug)
-        //     print "\n\n<p>filename is " . $filename;
-        // $file = fopen($filename, 'a');
-        // fputcsv($file, $dataRecord);
-        // fclose($file);
-
         $dataEntered = false;
         try {
-          $thisDatabase->db->beginTransaction();
+          $thisDatabaseWriter->db->beginTransaction();
 
           $queryUser = 'INSERT INTO tblUsers SET pmkNetId = ?, fldFirstName = ?, fldLastName = ?, fldEmail = ?';
-          $results = $thisDatabase->insert($query, $dataRecord);
+          $results = $thisDatabaseWriter->insert($queryUser, $dataRecord);
+          $primaryKey = $thisDatabaseWriter->lastInsert();
 
-          $dataEntered = $thisDatabase->db->commit();
+          $queryUser2 = 'INSERT INTO tblTea SET pmkTeaName = ?, fldType = ?, fldBrand = ?';
+          $results2 = $thisDatabaseWriter->insert($queryUser2, $dataRecord2);
+          $primaryKey = $thisDatabaseWriter->lastInsert();
+
+          $queryUser3 = 'INSERT INTO tblReviews SET fnkTeaName = ?, fldRating = ?, fldServedAs = ?, fldReview = ?';
+          $results3 = $thisDatabaseWriter->insert($queryUser3, $dataRecord3);
+          $primaryKey = $thisDatabaseWriter->lastInsert();
+
+          # CHANGES DONE COMMIT CHANGES
+          $dataEntered = $thisDatabaseWriter->db->commit();
 
         } catch (PDOException $e) {
-          $thisDatabase->db->rollback();
+          $thisDatabaseWriter->db->rollback();
           if ($debug)
               print "Error!: " . $e->getMessage() . "</br>";
           $errorMsg[] = "There was a problem with accpeting your data please contact us directly.";
         }
 
-        // $queryTea = 'INSERT INTO tblTea SET pmkTeaName = ' . $teaName . ', fldType = ' . $teaType . ', fldBrand = ' . $brandName;
-        // $queryReview = 'INSERT INTO tblReviews SET pmkTeaName = ' . $teaName . ', fldRating = ' . $rdoRating . ', fldServedAs = ' . $chkServedAs . ', fldReview = ' . $Review;
-        
         // ===========================================
         // Create email message.
         // ===========================================
@@ -247,7 +256,6 @@ if (isset($_POST["btnSubmit"])) {
         $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
         
     } // end form is valid
-    
 } // ends if form was submitted.
 
 ?>
@@ -411,19 +419,19 @@ if (isset($_POST["btnSubmit"])) {
             <div class="checkboxes">
             <label for="checkServedAs" class="required">Served As
               <label><input type="checkbox" name="chkHot"
-                     value="1"
+                     value="Hot"
                      <?php if ($servedAsERROR) print 'class="mistake"'; ?>
                      checked = "checked"
                      onfocus="this.select()"
                      >Hot</label>
               <label><input type="checkbox" name="chkChilled"
-                     value="2"
+                     value="Chilled"
                      <?php if ($servedAsERROR) print 'class="mistake"'; ?>
                      onfocus="this.select()"
                      >Chilled
               </label><label>
               <input type="checkbox" name="chkPressed"
-                     value="3"
+                     value="Pressed"
                      <?php if ($servedAsERROR) print 'class="mistake"'; ?>
                      onfocus="this.select()"
                      >Pressed</label>

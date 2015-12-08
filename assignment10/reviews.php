@@ -38,11 +38,13 @@ $columns = 6;
 		print '<br>';
 		print '<h4>Brand:</h4> <p>' . $rec[5] . '</p>';
 		print '<br>';
-		print '<h4>Served:</h4> <p>' . $rec[2] . '</p>';
+
+		$display = preg_replace('/((?<=[a-z])(?=[A-Z])|(?=[A-Z][a-z]))/',' $1',$rec[2]);
+
+		print '<h4>Served:</h4> <p>' . $display . '</p>';
 		print '</li>';
 
 		print '</ul>';
-
 
 		print '</div>';
 	}
