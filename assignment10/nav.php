@@ -13,10 +13,10 @@ $adminArray = $thisDatabaseReader->select($query,"",1,0,0,0,false,false);
       } else {
           print '<li><a href="index.php">Home</a></li>';
       }
-      if ($path_parts['filename'] == "tables") {
+      if ($path_parts['filename'] == "info") {
           print '<li class="activePage">Tea Information</li>';
       } else {
-          print '<li><a href="tables.php">Tea Information</a></li>';
+          print '<li><a href="info.php">Tea Information</a></li>';
       }
       if ($path_parts['filename'] == "reviews") {
           print '<li class="activePage">Reviews</li>';

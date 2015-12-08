@@ -11,19 +11,34 @@ $columns = 6;
 <article class="reviews">
 
 <h1>Reviews</h1>
-<div class="text">
-<p>Here are some submitted reviews</p>
-</div>
-<br>
+<p class="text">
+Not sure what tea to try next? Check out these reviews to see what's the scoop. What brand
+is top notch? What's on the bottom of the totem pole? Maybe you'll find your new favorite!
+</p>
 <?php
 	foreach ($reviewsArray as $rec) {
-		print '<div class="block">';
+
+		$random = rand(1, 4);
+		if ($random == 1) {
+			$bfi = "one";
+		} elseif ($random == 2) {
+			$bfi = "two";
+		} elseif ($random == 3) {
+			$bfi = "three";
+		} elseif ($random == 4) {
+			$bfi = "four";
+		}
+
+		print '<div id="bid" class="box fade-in ' . $bfi . '">';
 
 		print '<ul>';
 
 		print '<li class="left">';
 		print '<h4>Rating:</h4>';
 		print '<p>' . $rec[1] . '/5</p>';
+		for ($i = 0; $i < $rec[1]; $i++) {
+			print '<img src="images/tea.png" alt="icon" class="box fade-in five">';
+		}
 		print '</li>';
 
 		print '<li class="center">';

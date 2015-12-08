@@ -304,8 +304,9 @@ if (isset($_POST["btnSubmit"])) {
     <form action="<?php print $phpSelf; ?>" method="post" id="frmRegister">
       <fieldset class="formWrapper">
       <legend>Submit a Review!</legend>
-      <p>Info abt form here</p>
-      <br>
+      <p class="text">Have a strong opinion about a certain tea you've tried? Was it so amazing that it made
+        your knees buckle? Or was it so groty that it made you want to boot? Let the world know your
+        discoveries. Fill out a form!</p>
 
         <fieldset class="userInformation">
         <legend>Contributor Information</legend>
