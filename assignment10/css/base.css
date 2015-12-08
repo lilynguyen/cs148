@@ -593,12 +593,25 @@ animation-delay: 1.1s;
     font-size: 25pt;
 }
 
-.admin p {
-
+.admin li {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    padding: 1em;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: 3em;
+    list-style-type: none;
 }
 
+.initiallyHidden { 
+    display: none; 
+}
 
+.functions {
+    padding-bottom: .5em;
+    padding-left: 4em;
+}
 
-
-
-
+#addLink {
+    margin-left: 19.7em;
+}

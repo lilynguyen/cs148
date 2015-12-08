@@ -42,10 +42,10 @@ $adminArray = $thisDatabaseReader->select($query,"",1,0,0,0,false,false);
           // print $adminIds[$i];
           if ($netId == $adminIds[$i]) {
             // print 1;
-            if ($path_parts['filename'] == "edit") {
+            if ($path_parts['filename'] == "admin") {
                 print '<li class="activePage">Admin</li>';
             } else {
-                print '<li><a href="edit.php">Admin</a></li>';
+                print '<li><a href="admin.php">Admin</a></li>';
             } 
           }
         }

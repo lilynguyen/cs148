@@ -201,7 +201,7 @@ if (isset($_POST["btnSubmit"])) {
             print "<p>Form is valid</p>";
         
         // ===========================================
-        // PUTTING THINGS INTO DB (rn it's into a csv)
+        // PUTTING THINGS INTO DB
         // ===========================================
 
         $dataEntered = false;
