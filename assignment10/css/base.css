@@ -68,18 +68,18 @@ header {
     background-size: 100%;
     background-image: url('../images/bg2.jpg');
 
-/*    -webkit-animation-name: example;
+    -webkit-animation-name: example;
     -webkit-animation-duration: 30s;
     -webkit-animation-delay: 0s;
-    -webkit-animation-iteration-count: 3;*/
+    -webkit-animation-iteration-count: 3;
 }
 
 @-webkit-keyframes example {
     /*0%   {background-image: url('../images/bg2.jpg');}*/
     25%  {background-image: url('../images/bg3.jpg');}
     50%  {background-image: url('../images/bg2.jpg');}
-    75%  {background-image: url('../images/bg3.jpg');}
-    100% {background-image: url('../images/bg2.jpg');}
+    75%  {background-image: url('../images/bg1.jpg');}
+    100% {background-image: url('../images/bg4.jpg');}
 }
 
 header img {

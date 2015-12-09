@@ -50,6 +50,7 @@
           <li>Advising: <a href="advising/index.php">Index</a> - <a href="advising/css/base.css">Style Sheet</a> - <a href="advising/erd.pdf">ERD</a> - <a href="advising/schema.pdf">Schema</a></li>
           <li>Friday: <a href="misc/friday.php?numRecord=10&startRecord=1000">Index</a> - <a href="misc/css/base.css">Style Sheet</a></li>
           <li>Try Me: <a href="tryme.php">CLICKY</a></li> 
+          <li>Assignment 10: <a href="assignment10/">Foveo</a> - <a href="assignment10/css/base.css">Style Sheet</a> - <a href="assignment10/erd.pdf">ERD</a> - <a href="assignment10/schema.pdf">Schema</a> - <a href="assignment10/specs.pdf">Doc Specs</a></li>
       </ul>
     </nav>
 </body>
