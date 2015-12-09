@@ -20,4 +20,9 @@ function verifyPhone ($testString) {
         $regex = '/^(?:1(?:[. -])?)?(?:\((?=\d{3}\)))?([2-9]\d{2})(?:(?<=\(\d{3})\))? ?(?:(?<=\d{3})[.-])?([2-9]\d{2})[. -]?(\d{4})(?: (?i:ext)\.? ?(\d{1,5}))?$/';
 	return (preg_match($regex, $testString));
 }
+
+// function verifyAlphaNumInput ($testString) {
+// 	// Check for letters, numbers and dash, period, space and single quote only. 
+// 	return (preg_match ("/^([[:alnum:]]|-|\.| |'|!|?)+$/", $testString));
+// }
 ?>

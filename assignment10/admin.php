@@ -104,15 +104,16 @@ $query2 = 'SELECT pmkTeaName, fldType, fldBrand FROM tblTea';
 $records2 = $thisDatabaseReader->select($query2, "", 0, 0, 0, 0, false, false);
 
 print '<ol id="TWO" class="initiallyHidden">';
+print '<a id="addLink" href="addTea.php">Add Tea</a>';
 foreach ($records2 as $rec) {
 
 	print '<div class="functions">';
-	print '<a href="editTea.php?id1=' . $rec['pmkTeaName'] . '?id2=' . $rec['fldBrand'] . '">edit</a> ';
-	print '<a href="deleteTea.php?' . $rec['pmkTeaName'] . '?' . $rec['fldBrand'] . '">delete</a>';
+	print '<a href="editTea.php?id1=' . $rec['pmkTeaName'] . '&id2=' . $rec['fldBrand'] . '">edit</a> ';
+	print '<a href="deleteTea.php?id1=' . $rec['pmkTeaName'] . '&id2=' . $rec['fldBrand'] . '">delete</a>';
 	print '</div>';
 
 	print '<li>';
-	for ($i = 0; $i < 2; $i++) {
+	for ($i = 0; $i < 3; $i++) {
 		print $rec[$i] . ' ';
 	}
 	print '</li>';
@@ -127,15 +128,16 @@ $query3 = 'SELECT pmkReviewId, fnkTeaName, fldRating, fldServedAs, fldReview FRO
 $records3 = $thisDatabaseReader->select($query3, "", 0, 0, 0, 0, false, false);
 
 print '<ol id="THREE" class="initiallyHidden">';
+print '<a id="addLink" href="addReview.php">Add Review</a>';
 foreach ($records3 as $rec) {
 
 	print '<div class="functions">';
-	print '<a href="edit.php?' . $rec['pmkReviewId'] . '">edit</a> ';
-	print '<a href="delete.php?' . $rec['pmkReviewId'] . '">delete</a>';
+	print '<a href="editReview.php?rid=' . $rec['pmkReviewId'] . '">edit</a> ';
+	print '<a href="deleteReview.php?rid=' . $rec['pmkReviewId'] . '">delete</a>';
 	print '</div>';
 
 	print '<li>';
-	for ($i = 0; $i < 4; $i++) {
+	for ($i = 0; $i < 5; $i++) {
 		print $rec[$i] . ' ';
 	}
 	print '</li>';

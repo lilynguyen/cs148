@@ -129,7 +129,7 @@ if (isset($_POST["btnSubmit"])) {
     $addThis = $chkHot;
     $addThis .= $chkChilled;
     $addThis .= $chkPressed;
-    print $addThis;
+    // print $addThis;
     $dataRecord3[] = $addThis;
 
     $descript = htmlentities($_POST["txtDescript"], ENT_QUOTES, "UTF-8");
@@ -187,10 +187,11 @@ if (isset($_POST["btnSubmit"])) {
     if ($descript == "") {
         $errorMsg[] = "Please enter a description";
         $descriptERROR = true;
-    } elseif (!verifyAlphaNum($descript)) {
-        $errorMsg[] = "Your description name appears to have extra character.";
-        $descriptERROR = true;
     }
+    // } elseif (!verifyAlphaNum($descript)) {
+    //     $errorMsg[] = "Your description name appears to have extra character.";
+    //     $descriptERROR = true;
+    // } DEAR BOB OR APARAJITTA HOW DO YOU VERIFY INPUT LIKE THIS
 
     // ===========================================
     // Process Form (Everything passes)
@@ -357,7 +358,7 @@ if (isset($_POST["btnSubmit"])) {
                      >
             </label>
             
-            <label for="txtLastName" class="required">Tea Type
+            <label for="txtTeaType" class="required">Tea Type
               <select name="teaTypes" id="typeTea">
                 <option value="green">Green</option>
                 <option value="black">Black</option>

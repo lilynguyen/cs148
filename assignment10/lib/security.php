@@ -29,6 +29,15 @@ function securityCheck($path_parts, $yourURL, $form = false) {
     $whiteListPages[] = "editUsers.php";
     $whiteListPages[] = "deleteUsers.php";
 
+    $whiteListPages[] = "addTea.php";
+    $whiteListPages[] = "editTea.php";
+    $whiteListPages[] = "deleteTea.php";
+
+    $whiteListPages[] = "addReview.php";
+    $whiteListPages[] = "editReview.php";
+    $whiteListPages[] = "deleteReview.php";
+
+
     //add all the folders to this array
     $whiteListFolders = array();
     $whiteListFolders[] = "/cs148";
